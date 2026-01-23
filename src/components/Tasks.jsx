@@ -1,4 +1,4 @@
-import { ChevronRight, Trash } from "lucide-react"; // Corrigido: Trash em vez de TrashIcon
+import { CheckIcon, ChevronRight, Trash } from "lucide-react"; // Corrigido: Trash em vez de TrashIcon
 import { useNavigate } from "react-router-dom";
 import { ListTodo } from "lucide-react";
 
@@ -24,11 +24,12 @@ function Tasks({ tasks, onTaskClick, onDeleteTask }) { // Recebe "tasks" (plural
             <li key={task.id} className="flex gap-2">
                 <button  
                   onClick={() => onTaskClick(task.id)}
-                  className={`w-full p-3 rounded-md text-left flex justify-between items-center ${
-                    task.isCompleted ? "bg-green-400 line-through" : "bg-slate-400"
+                  className={`w-full p-3 rounded-md text-left flex items-center gap-2 ${
+                    task.isCompleted ? "bg-green-400" : "bg-slate-400"
                   } hover:opacity-90 transition-opacity`}
                 >
-                  <span>{task.title}</span>
+                  {task.isCompleted && <CheckIcon /> }
+                  {task.title}
                 </button>
                 <button onClick={() => onSeeDetailsClick(task)} //adicionando a função de navegação ao clicar no botão
                   className="bg-slate-600 p-3 rounded-md text-white hover:bg-slate-700"
