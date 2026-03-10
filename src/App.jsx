@@ -49,7 +49,7 @@ function App() {
 
 
 
-  useEffect(() =>{//Função que irá mamnter salvo as novas tasks no LocalStorage
+  useEffect(() =>{//Função que irá manter salvo as novas tasks no LocalStorage
     localStorage.setItem("tasks", JSON.stringify(tasks))
   },[tasks])
 
