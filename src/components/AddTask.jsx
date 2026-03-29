@@ -18,7 +18,7 @@ function AddTask({ onAddTaskSubmit }) {
             <InputTitle 
                 value={title}
                 onChange={(event) => setTitle(event.target.value)}//Sempre que precisar pegar dados do input
-                placeholder="Digite a descrição da tarefa"
+                placeholder="Digite o nome da tarefa"
             />
             
             <InputDescription 
